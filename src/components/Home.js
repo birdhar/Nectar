@@ -19,9 +19,10 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import { gsap, Power2 } from "gsap/gsap-core";
 import { Timer10 } from "@mui/icons-material";
+import { InView } from "react-intersection-observer";
 
 function Home() {
-  const dataRef = useRef(null);
+  const dataRef = useRef();
   const [visibleElement, setVisibleElement] = useState();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(null);
@@ -47,12 +48,20 @@ function Home() {
   //   setLoading(false);
   // };
 
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     const entry = entries[0];
+  //     setVisibleElement(entry.isIntersecting);
+  //   });
+  //   observer.observe(dataRef.current);
+  // }, []);
+
   useEffect(() => {
     setLoading(true);
     (async () => {
       window.setTimeout(() => {
         setLoading(false);
-      }, 5000);
+      }, 3000);
     })();
   }, []);
 
@@ -78,21 +87,18 @@ function Home() {
 
   // -----------------------------------
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setVisibleElement(entry.isIntersecting);
-      console.log(entry.isIntersecting);
-    });
-    observer.observe(dataRef.current);
-  }, []);
+  // if (visibleElement) {
+  //   setTimeout(() => {
+  //     setOpen(true);
+  //   }, 500);
+  // }
 
-  if (visibleElement) {
-    setTimeout(() => {
+  function hanldeViewChange(inView, entry) {
+    console.log(inView);
+    if (inView) {
       setOpen(true);
-    }, 400);
+    }
   }
-
   visibleElement ? disableBodyScroll(document) : enableBodyScroll(document);
 
   return (
@@ -146,9 +152,6 @@ function Home() {
                   home={(w) => setHome(w)}
                   about={(w) => setAbout(w)}
                   contact={(w) => setContact(w)}
-                  open={open}
-                  closePopup={(w) => setOpen(w)}
-                  setVisibleElement={setVisibleElement}
                 />
               </div>
               <div
@@ -157,11 +160,7 @@ function Home() {
                 data-scroll-container
               >
                 <div>
-                  <Featured
-                    open={open}
-                    closePopup={(w) => setOpen(w)}
-                    setVisibleElement={setVisibleElement}
-                  />
+                  <Featured />
                 </div>
                 <div id={about}>
                   <About />
@@ -170,13 +169,13 @@ function Home() {
                 <div id="gallery">
                   <Gallery />
                 </div>
-                <div id={features} ref={dataRef}>
+                <InView as="div" onChange={hanldeViewChange} delay={5000}>
                   <Features
                     open={open}
                     closePopup={(w) => setOpen(w)}
                     setVisibleElement={setVisibleElement}
                   />
-                </div>
+                </InView>
               </div>
               <div id={contact}>
                 <Footer />

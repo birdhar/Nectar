@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./NewSection2.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { style } from "@mui/system";
+// import { style } from "@mui/system";
 
 function NewSection2() {
   return (
@@ -30,6 +30,7 @@ function NewSection2() {
                   <img
                     style={{ height: "40%", width: "40%" }}
                     src="/images/dating/star.png"
+                    alt=""
                   />
                 </div>
 
@@ -61,7 +62,8 @@ function NewSection2() {
                     color: "black",
                     fontWeight: "600",
                   }}
-                  href="#"
+                  alt=""
+                  href="https"
                 >
                   Start Free Trial
                 </a>
@@ -81,6 +83,7 @@ function NewSection2() {
               <img
                 style={{ height: "300px", width: "100%" }}
                 src="/images/dating/lvcard.jpg"
+                alt=""
               />
               <blockquote
                 className=" p-8 mb-4"
