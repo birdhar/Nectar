@@ -1,0 +1,42 @@
+.newsection3 {
+  display: flex;
+  justify-content: center;
+}
+.newsection3inner {
+  width: 50%;
+}
+.newsection3inner div {
+  width: 75%;
+}
+.container {
+  padding: 5rem 2rem;
+}
+.newsection3inner2 h5 {
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 4rem 0;
+  }
+  .newsection3 {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .newsection3inner div {
+    width: 100%;
+  }
+
+  .section3photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .newsection3inner {
+    width: 75%;
+  }
+  .newsection3inner2 {
+    margin-top: 5rem;
+  }
+}

@@ -1,0 +1,53 @@
+.NewSection4 {
+  height: auto;
+
+  justify-content: center;
+}
+.firstrow {
+  /* margin-top: 5rem; */
+  display: flex;
+  justify-content: center;
+}
+.firstrow div {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.firstrow h3 {
+  font-size: 2.4rem;
+}
+.firstrow p {
+  font-size: 1.2rem;
+}
+
+.secondRow {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.secondRowinner {
+  width: 24%;
+  text-align: center;
+}
+.secondRow h4 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.secondRow p {
+  color: #71717a;
+}
+
+@media screen and (max-width: 768px) {
+  .secondRow {
+    flex-direction: column;
+    align-items: center;
+  }
+  .secondRowinner {
+    width: 80%;
+  }
+}

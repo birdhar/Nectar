@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.pading {
+  position: relative;
+}
+@media only screen and (max-width: 767px) {
+  .image {
+    width: 80px;
+    margin-top: 0px !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: center !important;
+  }
+  .imgCon {
+    justify-content: center !important;
+    justify-items: center !important;
+  }
+}
+.image {
+  width: 80px;
+  margin-top: -25px;
+}
+h3 {
+  font-size: 1.2rem !important;
+}
+p {
+  font-size: 1rem !important;
+}
+/* .pading {
+  margin-top: 9vw !important;
+} */
+@media screen and (max-width: 768px) {
+  .para {
+    padding: 3rem;
+  }
+  .pading {
+    margin-top: 0 !important;
+  }
+}
+@media screen and (max-width: 574px) {
+  .lottie {
+    width: 30% !important;
+  }
+  .lottie2 {
+    width: 25% !important;
+  }
+  .para {
+    padding: 3.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .para p {
+    font-size: 20px;
+  }
+}
+
+.popupbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: #c6cbcf98;
+  display: grid;
+  place-items: center;
+}
+.popup {
+  width: 50%;
+  height: 50%;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+}
+.popup h4 {
+  font-size: 1.5em;
+  line-height: 60px;
+}
+.popup h6 {
+  font-size: 1em;
+  color: #05cab6;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .popup {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .popup h4 {
+    font-size: 1rem;
+  }
+  .popup h6 {
+    font-size: 0.9rem;
+  }
+}

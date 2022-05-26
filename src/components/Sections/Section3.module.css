@@ -1,0 +1,134 @@
+.section3continer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.section3 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.section3left {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 35%;
+}
+.section3right {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 65%;
+}
+.section3leftinner {
+  width: 100%;
+  height: 60%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-right: -20%;
+  background-color: #5b68d0;
+  color: #fff;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  text-align: justify;
+  /* border-radius: 10px; */
+}
+.section3leftinner h5 {
+  /* color: #05cab6; */
+  line-height: 60px;
+  font-size: 40px;
+}
+.section3leftinner p {
+  letter-spacing: 1px;
+  font-size: 23px;
+}
+.r {
+  font-size: 20px;
+  color: #05cab6;
+}
+.section3rightinner {
+  width: 100%;
+  height: 80%;
+  background-color: aqua;
+}
+
+.popupbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: #c6cbcf98;
+  display: grid;
+  place-items: center;
+}
+.popup {
+  width: 50%;
+  height: 50%;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+}
+.popup h4 {
+  font-size: 1.5em;
+  line-height: 60px;
+}
+.popup h6 {
+  font-size: 1em;
+  color: #05cab6;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .section3 {
+    flex-direction: column-reverse;
+  }
+  .section3left,
+  .section3right {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .section3leftinner {
+    width: 90%;
+    margin-right: 0;
+    height: auto;
+    margin-top: -4rem;
+  }
+  .section3rightinner {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section3leftinner {
+    margin-top: -7rem;
+  }
+  .popup {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .popup {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .popup h4 {
+    font-size: 1rem;
+  }
+  .popup h6 {
+    font-size: 0.9rem;
+  }
+}

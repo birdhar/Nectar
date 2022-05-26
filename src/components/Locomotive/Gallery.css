@@ -1,0 +1,123 @@
+.gallery-wrap {
+  background-color: #d53f41;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  position: relative;
+}
+
+.gallery-wrap .gallery-counter {
+  position: absolute;
+  top: 10%;
+  left: 100px;
+  z-index: 1;
+  mix-blend-mode: difference;
+  line-height: 16px;
+  color: #dbd8d6;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-block;
+}
+.gallery-wrap .gallery-counter .divider {
+  content: "";
+  width: 6.3vw;
+  margin: 7px 10px;
+  height: 1px;
+  display: inline-block;
+}
+
+.gallery-wrap .gallery {
+  height: 80vh;
+  padding: 1vh 0;
+  width: 400%;
+  display: flex;
+  /* flex-wrap: nowrap; */
+}
+
+.gallery-wrap .gallery-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  will-change: transform;
+}
+
+.gallery-wrap .gallery-item-info {
+  position: absolute;
+  bottom: 10%;
+  z-index: 1;
+  transform: translateX(-20%);
+  color: #dbd8d6;
+}
+
+.gallery-wrap .gallery-item-info .gallary-info-title {
+  line-height: 6vw;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 6vw;
+}
+
+.gallery-wrap .gallery-item-info .gallary-info-subtitle {
+  position: relative;
+  line-height: 6vw;
+  color: transparent;
+  font-weight: 400;
+  -webkit-text-stroke: 2px #dbd8d6;
+  font-family: "Bodoni Moda", serif;
+}
+
+.gallery-wrap .gallery-item-info .gallary-info-category {
+  position: relative;
+  line-height: 24px;
+  font-size: 24px;
+  font-weight: 400;
+  -webkit-text-stroke: 2px #dbd8d6;
+  font-family: "Nunito", sans-serif;
+  margin-top: 2vh;
+}
+
+.gallery-wrap .gallary-item-wrapper {
+  aspect-ratio: 16/9;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20vw 1fr 200px;
+  width: 100vw;
+}
+
+.gallery-wrap .gallary-item-image {
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  transform: scale(1);
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-wrap .gallary-item-wrapper {
+    grid-template-columns: 20vw 1fr 30px;
+  }
+}
+
+/* body {
+  background-color: #d53f41;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.section {
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: aqua;
+}
+.section h3 {
+  font-size: 40px;
+} */

@@ -1,0 +1,87 @@
+.topbg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: changeImage 20s linear infinite;
+}
+
+@keyframes changeImage {
+  0% {
+    background-image: url("Images/couples.jpg");
+  }
+  25% {
+    background-image: url("Images/bg.jpg");
+  }
+  50% {
+    background-image: url("Images/bg2.jpg");
+  }
+  100% {
+    background-image: url("Images/couples.jpg");
+  }
+}
+
+.topbgspan {
+  background-color: black;
+}
+.backgroundText {
+  width: 70%;
+}
+.backgroundText h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1;
+}
+.backgroundText p {
+  font-size: 1.5rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+  color: rgb(210, 199, 199);
+}
+.navfont {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+  font-weight: bold;
+  line-height: 1.625;
+  white-space: nowrap;
+  color: white;
+  text-decoration: none;
+}
+.Hamburgerbtn {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: transparent;
+}
+.innser {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .innser {
+    flex-direction: column;
+    align-items: center;
+  }
+  .backgroundText h1 {
+    font-size: 1.5rem;
+  }
+  .backgroundText p {
+    font-size: 1rem; /* 18px */
+  }
+  .backgroundText {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .backgroundText h1 {
+    font-size: 1rem;
+  }
+  .backgroundText p {
+    font-size: 0.8rem; /* 18px */
+    margin-left: 2rem;
+  }
+}

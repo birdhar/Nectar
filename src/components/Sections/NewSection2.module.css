@@ -1,0 +1,23 @@
+.innser {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.blockquoteCard {
+  border-radius: 7px;
+}
+
+@media screen and (max-width: 768px) {
+  .innser {
+    flex-direction: column;
+    align-items: center;
+  }
+  .blockquoteCard {
+    width: 100%;
+  }
+  #lvcard {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

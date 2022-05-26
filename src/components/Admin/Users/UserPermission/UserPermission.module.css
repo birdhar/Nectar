@@ -1,0 +1,35 @@
+.userPermissionButton,
+.userPermissionButton:hover {
+  background-color: rgb(89, 215, 214);
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+}
+.addNewUserInput {
+  max-width: 180px;
+  color: #717171 !important;
+  background-color: #e1e1e1 !important;
+}
+.addNewUserEmail {
+  color: #717171 !important;
+  background-color: #e1e1e1 !important;
+}
+
+.addNewUserSelect {
+  color: #717171 !important;
+  background-color: #e1e1e1 !important;
+  cursor: pointer;
+}
+.addNewUserOption {
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+.addNewUserSendButton,
+.addNewUserSendButton:hover {
+  background-color: rgb(89, 215, 214);
+  width: 200px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+}

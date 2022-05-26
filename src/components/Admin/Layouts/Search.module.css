@@ -1,0 +1,16 @@
+.searchForm {
+  position: relative;
+}
+.searchForm > input {
+  padding-left: 60px;
+  background-color: rgb(247, 248, 250);
+  border: none;
+  height: 47px;
+  border-radius: 8px;
+}
+.searchImg {
+  position: absolute;
+  top: 12px;
+  left: 28px;
+  color: #9ca3af;
+}
