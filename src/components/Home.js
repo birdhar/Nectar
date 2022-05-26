@@ -24,7 +24,7 @@ function Home() {
   const dataRef = useRef(null);
   const [visibleElement, setVisibleElement] = useState();
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(null);
   // const [timer, setTimer] = useState(3);
   const [home, setHome] = useState("");
   const [about, setAbout] = useState("");
@@ -47,15 +47,14 @@ function Home() {
   //   setLoading(false);
   // };
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   (async () => {
-  //     window.setTimeout(() => {
-  //       setLoading(false);
-  //       console.log(" loading set to false");
-  //     }, 5000);
-  //   })();
-  // }, []);
+  useEffect(() => {
+    setLoading(true);
+    (async () => {
+      window.setTimeout(() => {
+        setLoading(false);
+      }, 5000);
+    })();
+  }, []);
 
   // useEffect(() => {
   //   ref.current = window.setInterval(() => {
