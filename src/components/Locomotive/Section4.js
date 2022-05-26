@@ -173,8 +173,13 @@ function Section4(props) {
               <img
                 style={{ height: "40%" }}
                 src="/images/datingNew/apple.png"
+                alt=""
               />
-              <img style={{ height: "40%" }} src="/images/datingNew/play.png" />
+              <img
+                alt=" "
+                style={{ height: "40%" }}
+                src="/images/datingNew/play.png"
+              />
             </div>
           </div>
         </div>

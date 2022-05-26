@@ -24,8 +24,8 @@ function Home() {
   const dataRef = useRef(null);
   const [visibleElement, setVisibleElement] = useState();
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [timer, setTimer] = useState(3);
+  const [loading, setLoading] = useState(null);
+  // const [timer, setTimer] = useState(3);
   const [home, setHome] = useState("");
   const [about, setAbout] = useState("");
   const [features, setFeatures] = useState("");
@@ -37,27 +37,36 @@ function Home() {
 
   // useScroll(!loading);
 
-  const ref = useRef(null);
+  // const ref = useRef(null);
   let imgContainerRef = useRef(null);
   let imgRef = useRef(null);
   const containerRef = useRef();
 
-  const clear = () => {
-    window.clearInterval(ref.current);
-    setLoading(false);
-  };
+  // const clear = () => {
+  //   window.clearInterval(ref.current);
+  //   setLoading(false);
+  // };
 
   useEffect(() => {
-    ref.current = window.setInterval(() => {
-      setTimer((timer) => timer - 1);
-    }, 1000);
+    setLoading(true);
+    (async () => {
+      window.setTimeout(() => {
+        setLoading(false);
+      }, 5000);
+    })();
   }, []);
 
-  useEffect(() => {
-    if (timer === 0) {
-      clear();
-    }
-  }, [timer]);
+  // useEffect(() => {
+  //   ref.current = window.setInterval(() => {
+  //     setTimer((timer) => timer - 1);
+  //   }, 1000);
+  // }, []);
+
+  // useEffect(() => {
+  //   if (timer === 0) {
+  //     clear();
+  //   }
+  // }, [timer]);
 
   useEffect(() => {
     tl.to(imgContainerRef, 1, { css: { visibility: "visible" } }).to(
@@ -65,7 +74,7 @@ function Home() {
       0.5,
       { width: "0", ease: Power2.easeInOut }
     );
-  }, []);
+  }, [imageReveal, tl]);
 
   // -----------------------------------
 
@@ -115,7 +124,8 @@ function Home() {
             strokeColor="#fff"
             strokeWidth="1px"
           />
-          {/* {loading ? (
+          {/* {console.log(loading)} */}
+          {loading ? (
             <div
               className="loader-wrapper fixed"
               ref={(el) => (imgContainerRef = el)}
@@ -124,49 +134,55 @@ function Home() {
                 <img
                   src="/images/locomotive/logo.png"
                   ref={(el) => (imgRef = el)}
+                  alt=""
                 />
               </div>
             </div>
-          ) : ( */}
-          <div id={home}>
-            <Section1
-              features={(w) => setFeatures(w)}
-              home={(w) => setHome(w)}
-              about={(w) => setAbout(w)}
-              contact={(w) => setContact(w)}
-              open={open}
-              closePopup={(w) => setOpen(w)}
-              setVisibleElement={setVisibleElement}
-            />
-          </div>
-          <div
-            className="main-container"
-            id="main-container"
-            data-scroll-container
-          >
-            <div>
-              <Featured
-                open={open}
-                closePopup={(w) => setOpen(w)}
-                setVisibleElement={setVisibleElement}
-              />
-            </div>
-            <div id={about}>
-              <About />
-            </div>
+          ) : (
+            <>
+              <div id={home}>
+                <Section1
+                  features={(w) => setFeatures(w)}
+                  home={(w) => setHome(w)}
+                  about={(w) => setAbout(w)}
+                  contact={(w) => setContact(w)}
+                  open={open}
+                  closePopup={(w) => setOpen(w)}
+                  setVisibleElement={setVisibleElement}
+                />
+              </div>
+              <div
+                className="main-container"
+                id="main-container"
+                data-scroll-container
+              >
+                <div>
+                  <Featured
+                    open={open}
+                    closePopup={(w) => setOpen(w)}
+                    setVisibleElement={setVisibleElement}
+                  />
+                </div>
+                <div id={about}>
+                  <About />
+                </div>
 
-            <div id="gallery">
-              <Gallery />
-            </div>
-            <div id={features}>
-              <Features />
-            </div>
-          </div>
-          <div id={contact} ref={dataRef}>
-            <Footer />
-          </div>
-
-          {/* )} */}
+                <div id="gallery">
+                  <Gallery />
+                </div>
+                <div id={features} ref={dataRef}>
+                  <Features
+                    open={open}
+                    closePopup={(w) => setOpen(w)}
+                    setVisibleElement={setVisibleElement}
+                  />
+                </div>
+              </div>
+              <div id={contact}>
+                <Footer />
+              </div>
+            </>
+          )}
         </div>
       </main>
     </LocomotiveScrollProvider>
